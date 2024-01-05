@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>HelloKitty</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'after/assets/images/hellolo.jpg' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'main/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/templatemo-cyborg-gamingcopy.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href={% url 'indexpage' %} class="logo">
+                        <img src="{% static 'main/assets/images/hello.png' %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'indexpage' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'detailspage' %}">Details</a></li>
+                        <li><a href="{% url 'registerpage' %}">Register<img src="{% static 'main/assets/images/hellokitty.gif' %}" alt=""></a></li>
+                        <li><a href="{% url 'loginpage' %}">Log in<img src="{% static 'main/assets/images/hellodance.gif' %}" alt=""></a></li>
+                    </ul>   
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+            <div class="aboutkitty">
+                <h1 class="titleyeah">HelloKitty</h1>
+                <h5 class="h5design">Since 1997 dedicated for Kids entertainment</h5>
+                <p class="paradis">Hello Kitty ( Hepburn: Harō Kiti),also known by her real name Kitty White (Kiti Howaito), is a fictional character created by Yuko Shimizu, currently designed by Yuko Yamaguchi, and owned by the Japanese company Sanrio. Sanrio depicts Hello Kitty as an anthropomorphized white cat with a red bow and no visible mouth.According to her backstory, she lives in a London suburb with her family, and is close to her twin sister Mimmy, who is depicted with a yellow bow.</p>
+            </div>
+            <div class="imagesign">
+                <img class="imagesign" src="{% static 'main/assets/images/sto10.jpg' %}" alt="kittypic">
+            </div>
+            <p class="paradis1">Hello Kitty was created in 1974 and the first item, a vinyl coin purse, was introduced in 1975. Originally Hello Kitty was only marketed towards pre-teenage girls, but beginning in the 1990s, the brand found commercial success among teenage and adult consumers as well. Hello Kitty's popularity also grew with the emergence of kawaii (cute) culture. The brand went into decline in Japan after the 1990s, but continued to grow in the international market. By 2010 the character was worth $5 billion a year and The New York Times called her a "global marketing phenomenon". By 2014, when Hello Kitty was 40 years old, she was worth about $8 billion a year.</p>
+            <br>
+            <p class="paradis1">In 1962, Shintaro Tsuji, founder of Sanrio, began selling rubber sandals with flowers painted on them. Tsuji noted the profits gained by adding a cute design to the shoes and hired cartoonists to design cute characters for his merchandise. Hello Kitty was designed by Yuko Shimizu and was added to the lineup of early Sanrio characters in 1974.
+
+                Hello Kitty was initially known only as "the white kitten with no name" . Shimizu got the name Kitty from Lewis Carroll's Through the Looking-Glass; during a scene early in the book, Alice plays with a cat she calls Kitty. Sanrio's motto is "social communication," and Tsuji wanted the brand name to reflect that by including a greeting. He first considered "Hi Kitty" before finally settling on "Hello Kitty," her current name. Sanrio decided to make Hello Kitty British because foreign countries, in particular Britain, were trendy in Japan at the time of Hello Kitty's creation. Sanrio already had several characters set in the US, and it wanted Hello Kitty to be different.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 1997 <a href="{% url 'indexpage' %}">HelloKitty</a> Pvt.Company. All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'main/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'main/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'main/assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'main/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'main/assets/js/tabs.js' %}"></script>
+  <script src="{% static 'main/assets/js/popup.js' %}"></script>
+  <script src="{% static 'main/assets/js/custom.js' %}"></script>
+
+
+  </body>
+
+</html>

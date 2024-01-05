@@ -1,0 +1,117 @@
+{% extends 'info\baseindex.html' %}
+{% load static %}
+{% block ind %}
+
+    <style>
+        .govid{
+            display: inline-block;
+        }
+        .imagedesign{
+            width: 360px;
+            display: inline-block;
+            margin-left: 80px;
+        }
+        .dec{
+            color:aliceblue;
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            font-size: x-large;
+        }
+        .instyle{
+            border-style: none;
+            display: flex;
+            justify-content: center;
+            margin-left: 480px;
+            margin-top: 36px;
+            border-radius: 11px;
+            text-indent: 18px;
+        }
+        .butstyle{
+            text-decoration: none;
+            border-style: none;
+            border-radius: 30px;
+            background-color: coral;
+            width: 94px;
+            font-size: larger;
+            margin-left: 538px;
+            margin-top: 49px;
+            margin-bottom:40px;
+        }
+        .butstyle:hover{
+            background:white;
+            color:black;
+            font-size:20px;
+        }
+        .substyleho{
+            border-radius: 30px;
+            background-color: coral;
+        }
+        
+    </style>
+
+
+  <script>
+    videojs('my-player',{controls:true,autoplay:false,preload:'auto'});
+    
+  </script>
+
+<body>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-content">
+                <div class="aboutkitty">
+                    <h1 class="titleyeah">HelloKitty</h1>
+                    <h5 class="h5design">Since 1997 dedicated for Kids entertainment</h5>
+                </div>
+
+                <h5 class="h5design">Why Patreon ?</h5>
+                <p class="stylep">We would like to encourage you to show your support for the creator of this website, Hello Kitty. This beloved character has brought joy and happiness to kids and adults alike all around the world, and this website serves as a hub for fans to connect, share their love for Hello Kitty, and explore all the wonderful videos available. By contributing to the creator of the website, you are helping to ensure that this beloved character continues to inspire and delight fans for years to come. Your contribution can help to fund new designs, merchandise, and other projects that will enhance the Hello Kitty experience for fans of all ages. So please, consider showing your support and contributing to this wonderful creator today!</p>
+                
+               <form method="post">
+                {% csrf_token %}
+                <label class="dec">Amount</label>
+                <input class="instyle" type="text" name="amount" id="amount" placeholder="contribution">
+                <button class="butstyle" type="submit">Submit</button>
+
+               </form>
+               {% if payment %}
+                    <form action="{% url 'paymentstatus' %}" method="POST">
+                        {% csrf_token %}
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_lGRGScsyYCpuKq"
+                            data-amount="{{ payment.amount }}" 
+                            data-currency="{{ payment.currency }}"
+                            data-order_id="{{ payment.id }}"
+                            data-buttontext="Pay with Razorpay"
+                            data-name="HelloKitty"
+                            data-description="Streaming Hellokitty"
+                            data-image="{% static 'main/assets/images/hello.png' %}"
+                            data-prefill.name="{{payment.user}}"
+                            data-prefill.email="{{payment.user}}@gmail.com"
+                            data-theme.color="#F37254"
+                        ></script>
+                        <input class = "substyleho" type="hidden" custom="Hidden Element" name="hidden"/>
+                    </form>
+                {% endif %}
+
+               <p class="stylep"><span class='pspan' >Every penny you give will help our creator to motivate more in providing you the episodes you need in the timely manner. In addition to motivating the creator to produce more content, contributing financially can also help to improve the overall quality of the content. With more resources at their disposal, the creator can invest in better equipment, software, or additional staff, all of which can lead to a better end product for their audience. Furthermore, financial support can help the creator to experiment with new ideas and take creative risks, ultimately resulting in more innovative and engaging content. So, whether it's a few pennies or a larger sum, every contribution can go a long way in helping the creator to continue producing the content their audience loves. </span></p>              
+                
+
+            </div>
+
+
+
+       </div>
+    </div>
+  </div>
+  
+</body>
+
+
+
+{% endblock ind %}

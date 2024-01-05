@@ -1,0 +1,99 @@
+{% extends 'info\hellokitty.html' %}
+{% block vid %}
+{% load static %}
+
+
+<style>
+
+    .epdesign1{
+      background-color: #27292a;
+      color: white;
+      border-radius: 6px;
+      margin-top:15px;
+    }
+
+    .epdesign1:hover{
+        background-color: #FCD12A;
+        color: white;
+        border: #FCD12A;
+        width: 80px;
+        height: 23px;
+    }
+    .imgdis{
+        display:inline-block;
+        border-radius:13px;
+    }
+
+    .imgdis1{
+        display:inline-block;
+    }
+
+    .texdis{
+        display:inline-block;
+        
+    }
+    .butmystyle{
+        margin-top:35px;
+        background-color:#fdd1107a;
+        border-radius:13px;
+        padding-bottom:20px;
+    }
+    .h6dis{
+        color:#fdd835;
+        margin-top:15px;
+    }
+    .hospan{
+        color: white;
+    }
+
+    .styleimage1{
+        margin-bottom:15px;
+    }
+
+    .styleimage2{
+        height:176px;
+    }
+
+
+</style>
+
+
+
+
+
+<div class="part1">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="imgdis">
+                <img src="{% static 'after/assets/images/draw.png' %}"  alt="image" class="styleimage1">
+                <img src="{% static 'after/assets/images/drawg.gif' %}"  alt="image" class="styleimage">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="texdis">
+                <h3 class="h3design">Learn How to draw Hellokity</h3><br>
+                <h5 class="h5design">Synopsis</h5>
+                <p class="pardis">In this episode you will be learning how to draw a hellokitty step by step. Drawing hellokitty might look easy but it is complicated and tough as a nut to crack but we will teach you so dont worry.</p> <br>
+                <p class="pardis">Appreciate what you have and be blessed that your are surround by hellokitty and its episode. Hope your time is well sent.</p>
+                <h6 class="h6dis">Genre: <span class="hospan">Kids, Drama, Fantasy, Family, Story, Roleplay </span></h6>
+                <h6 class="h6dis">Released: <span class="hospan">2004</span></h6>
+                <h6 class="h6dis">Status: <span class="hospan">Completed</span></h6>
+            </div>
+            <div class="butmystyle">
+                <div class="text-center">
+                    <a href="{% url 'draw1' %}"><button class="epdesign1">Draw <span>Hellokitty</span></button></a>     
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="imgdis1">
+                <img src="{% static 'after/assets/images/images.png' %}"  alt="image" class="styleimage1">
+                <img src="{% static 'after/assets/images/kittydraw.jpg' %}"  alt="image" class="styleimage2">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock vid %} 

@@ -1,0 +1,88 @@
+{% extends 'info\hellokitty.html' %}
+{% block vid %}
+{% load static %}
+
+
+<style>
+    .allbutton{
+        display: inline-block;
+        margin-top:10px;
+        margin-left:45px;
+    }
+
+    .epdesign1{
+      background-color: #27292a;
+      color: white;
+      border-radius: 6px;
+      margin-top:15px;
+    }
+
+    .epdesign1:hover{
+        background-color: #FCD12A;
+        color: white;
+        border: #FCD12A;
+        width: 80px;
+        height: 23px;
+    }
+    .imgdis{
+        display:inline-block;
+        background-color:#fdd1107a;
+        border-radius:13px;
+    }
+    .texdis{
+        display:inline-block;
+        
+    }
+    .butmystyle{
+        margin-top:35px;
+        background-color:#fdd1107a;
+        border-radius:13px;
+        padding-bottom:20px;
+    }
+    .h6dis{
+        color:#fdd835;
+        margin-top:15px;
+    }
+    .hospan{
+        color: white;
+    }
+
+
+</style>
+
+
+
+
+
+<div class="part1">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="imgdis">
+                <img src="{% static 'after/assets/images/sto13.jpg' %}"  alt="image" class="styleimage1">
+                <img src="{% static 'after/assets/images/sto14.jpg' %}"  alt="image" class="styleimage1">
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="texdis">
+                <h3 class="h3design">Hellokity Keroppi</h3><br>
+                <h5 class="h5design">Synopsis</h5>
+                <p class="pardis">The adventures of a young kitten named Kitty with her keroppi the Frog. It's a friendship Story including Kitty in some fantasy world with her frog kuroppi as well. Hello Kitty and Friends have taught all around the world to believe that a story is more than just a fairy tale. It is a means of sharing heartfelt feelings in a way of story.</p><br>
+                <p class="pardis">Appreciate what you have and be blessed that your are surround by hellokitty and its episode. Hope your time is well sent.</p>
+                <h6 class="h6dis">Genre: <span class="hospan">Kids, Drama, Fantasy, Friends, Family, Roleplay </span></h6>
+                <h6 class="h6dis">Released: <span class="hospan">2001</span></h6>
+                <h6 class="h6dis">Status: <span class="hospan">Completed</span></h6>
+            </div>
+            <div class="butmystyle">
+                <div class="allbutton">
+                    <a href="{% url 'kuroppi1' %}"><button class="epdesign1">episode <span>1</span></button></a>
+                    <a href="{% url 'kuroppi2' %}"><button class="epdesign1">episode <span>2</span></button></a>
+                    <a href="{% url 'kuroppi3' %}"><button class="epdesign1">episode <span>3</span></button></a>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock vid %} 

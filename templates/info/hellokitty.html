@@ -1,0 +1,133 @@
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>HelloKitty</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'after/assets/images/hellolo.jpg' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'after/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'after/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'after/assets/css/templatemo-cyborg-gamingcopy.css' %}">
+    <link rel="stylesheet" href="{% static 'after/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'after/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/popimprove.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css' rel='stylesheet'>
+
+
+    <style>
+        .govid{
+            display: inline-block;
+        }
+        .imagedesign{
+            margin-top:25px;
+            width: 360px;
+            display: inline-block;
+            margin-left: 210px;
+            margin-bottom:30px;
+            padding: 0;
+        }
+        .patreon{
+            margin-top:25px;
+            width: 407px;
+            display: inline-block;
+            margin-left: 80px;
+            margin-bottom:30px;
+            margin-right:186px;
+            padding: 0;
+        }
+        .patreonstyle{
+            display: flex;
+            justify-content: space-around;
+        }
+        .videodesign{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+
+
+
+  </head>
+
+<body>
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href={% url 'indexpage2' %} class="logo">
+                        <img src="{% static 'after/assets/images/hello.png' %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'indexpage2' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'afterdetail' %}">Details</a></li>
+                        <li class="logoutdesign"><a href="{% url 'logout' %}"><i class="gg-log-off"></i></a></li>
+                        <li><a href="{% url 'profile' %}">Profile <img src="{{ request.user.customer.image.url }}" alt=""></a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-content">
+                <div class="aboutkitty">
+                    <h3 class="text-center mt-5 mb-5">HelloKitty</h3>
+                </div>
+                {% block vid %}
+               
+                {% endblock vid %}                                     
+            </div>
+       </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="{% url 'indexpage2' %}">HelloKitty</a> Company. All rights reserved. 
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'after/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'after/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'after/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'after/assets/js/tabs.js' %}"></script>
+  <script src="{% static 'after/assets/js/popup.js' %}"></script>
+  <script src="{% static 'after/assets/js/custom.js' %}"></script>
+  </body>
+
+</html>

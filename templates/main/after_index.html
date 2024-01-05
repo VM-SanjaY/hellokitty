@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>HelloKitty</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'after/assets/images/hellolo.jpg' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'after/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'after/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'after/assets/css/templatemo-cyborg-gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'after/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'after/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/popimprove.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css' rel='stylesheet'>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href={% url 'indexpage2' %} class="logo">
+                        <img src="{% static 'after/assets/images/hello.png' %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'indexpage2' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'afterdetail' %}">Details</a></li>
+                        <li class="logoutdesign"><a href="{% url 'logout' %}"><i class="gg-log-off"></i></a></li>
+                        <li><a href="{% url 'profile' %}">Profile <img src="{{ request.user.customer.image.url }}" alt=""></a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <div class="main-button">
+    <div class="openBtn">
+        <button class="openButton" onclick="openForm()"><strong>Take a Survey</strong></button>
+    </div>
+  </div>
+
+  <div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+        <form class="formContainer" method="POST">
+            {% csrf_token %}
+            <button type="button" class="closedesign" onclick="closeForm()">X</button>
+            <h2 class="h2dis">Survey</h2>
+            <div class="likedis">
+                <label for="like">
+                    <strong>Do you like helloKitty</strong>
+                </label>
+                <select class="maindesign" name="like" id="like">
+                    <option class="design" value="yes">Yes</option>
+                    <option class="design" value="no">No</option>
+                </select><br>
+            </div>
+            <div class="likedis">
+                <label for="dolike">
+                    <strong>Do you like our site</strong>
+                </label>
+                <select class="maindesign" name="dolike" id="dolike">
+                    <option class="design" value="yes">Yes</option>
+                    <option class="design" value="no">No</option>
+                </select><br>
+            </div>
+            <div class="sitestyle">
+                <label>
+                    <strong>Is our site kid frindly</strong>
+                </label>
+                <select class="maindesign" name="site" id="site">
+                    <option class="design" value="yes">Yes</option>
+                    <option class="design" value="no">No</option>
+                </select><br>
+            </div>
+            <div id ="improve" class="whysitestyle">
+                <label >
+                    <strong>Is there<br> anything 
+                        you <br>want us<br> to improve :</strong>
+                </label><br>
+                <textarea id="improve" name="improve" rows="4" cols="30"></textarea><br>
+            </div>
+            <div class="sitestyle">
+                <label>
+                    <strong>Will you support patreon</strong>
+                </label>
+                <select class="maindesign" name="support" id="support">
+                    <option class="design" value="no">No</option>
+                    <option class="design" value="yes">Yes</option>
+                </select><br>
+            </div>
+            <div id ="whysite" class="whysitestyle" style="display:none;">
+                <label >
+                    <strong><a href="{% url 'patreon' %}">Wanna Contribute Patreon</a></strong>
+                </label><br>
+            </div>
+
+
+            <button type="submit" class="btn">Submit</button>
+            
+        </form>
+    </div>
+  </div>
+<!-- ***** pop up screen ends here ***** -->
+    {% for message in messages %}
+    <h5 class="h5yes">{{message}}</h5>
+    {% endfor %}
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="header-text">
+                  <h6>Welcome To HelloKitty</h6>
+                  <h4><em>Browse</em> Our Popular <em>HelloKitty</em> Here</h4>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+          <div class="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>Most Popular</em> Right Now</h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'hello' %}"><img src="{% static 'after/assets/images/sto4.jpg' %}" alt=""></a>
+                        <a href="{% url 'hello' %}"><h4>HelloKitty<br><span>Paradise</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.8</li>
+                        <li><i class="fa fa-download"></i> 2.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'theatre' %}"><img src="{% static 'after/assets/images/sto7.jpg' %}" alt=""></a>
+                        <a href="{% url 'theatre' %}"><h4>HelloKitty<br><span>Theatre</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.8</li>
+                        <li><i class="fa fa-download"></i> 2.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'kuroppi' %}"><img src="{% static 'after/assets/images/sto6.jpg' %}" alt=""></a>
+                        <a href="{% url 'kuroppi' %}"><h4>Hellokitty<br><span>Keroppi</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.8</li>
+                        <li><i class="fa fa-download"></i> 2.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'draw' %}"><img src="{% static 'after/assets/images/sto5.jpg' %}" alt=""></a>
+                        <a href="{% url 'draw' %}"><h4>HelloKitty<br><span>How to Draw</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.8</li>
+                        <li><i class="fa fa-download"></i> 2.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+
+          <!-- ***** Gaming Library Start ***** -->
+          <div class="gaming-library">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>Your Hellokitty </em> Library</h4>
+              </div>
+              <div class="item">
+                <ul>
+                  <li><a href="{% url 'craftpdf' %}"><img src="{% static 'after/assets/images/sto1.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'craftpdf' %}"><h4>Hellokitty</h4><span>Crochet</span></a></li>
+                  <li><h4>Date Added</h4><span>24/08/2036</span></li>
+                  <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
+                  <li><h4>Currently</h4><span>Download able</span></li>
+                  <li><div class="main-border-button"><a href="{{ all.datafile.url }}" download>Donwload</a></div></li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul>
+                  <li><a href="{% url 'mompdf' %}"><img src="{% static 'after/assets/images/sto9.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'mompdf' %}"><h4>Hellokitty</h4><span>Mom Surprise</span></a></li>
+                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
+                  <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
+                  <li><h4>Currently</h4><span>Download able</span></li>
+                  <li><div class="main-border-button"><a href="{{ all1.datafile.url }}" download>Donwload</a></div></li>
+                </ul>
+              </div>
+              <div class="item last-item">
+                <ul>
+                  <li><a href="{% url 'poppdf' %}"><img src="{% static 'after/assets/images/sto8.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'poppdf' %}"><h4>HelloKitty</h4><span>Pop Princess</span></a></li>
+                  <li><h4>Date Added</h4><span>21/04/2036</span></li>
+                  <li><h4>Hours Played</h4><span>892 H 14 Mins</span></li>
+                  <li><h4>Currently</h4><span>Download able</span></li>
+                  <li><div class="main-border-button"><a href="{{ all2.datafile.url }}" download>Donwload</a></div></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Gaming Library End ***** -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2036 <a href="{% url 'indexpage2' %}">HelloKitty</a> Company. All rights reserved. 
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'after/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'after/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'after/assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'after/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'after/assets/js/tabs.js' %}"></script>
+  <script src="{% static 'after/assets/js/popup.js' %}"></script>
+  <script src="{% static 'after/assets/js/custom.js' %}"></script>
+  <script>
+    function openForm() {
+      document.getElementById("popupForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("popupForm").style.display = "none";
+    }
+  </script>
+  <script>
+    document.getElementById('support').addEventListener('change', function() {
+        var whysite = document.getElementById('whysite');
+        if (this.value === 'yes') {
+            whysite.style.display = 'block';
+        } else {
+            whysite.style.display = 'none';
+        }
+    });
+  </script>
+
+
+  </body>
+
+</html>

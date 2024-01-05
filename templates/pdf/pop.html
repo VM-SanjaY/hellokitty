@@ -1,0 +1,16 @@
+{% extends 'main\aftermainvideo.html' %}
+{% load static %}
+
+{% block vid %}
+<h3 class="text-center mt-5 mb-5">{{ all.desc }}</h3>
+<center>
+    <embed
+        src="{{ all.datafile.url }}"
+        type="application/pdf"
+        frameBorder="0"
+        scrolling="auto"
+        height="850px"
+        width="100%"
+    ></embed>
+</center>
+{% endblock vid %}

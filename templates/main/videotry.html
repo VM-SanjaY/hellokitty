@@ -1,0 +1,25 @@
+
+{% extends 'main\mainvideo.html' %}
+{% load static %}
+
+{% block content %}
+<h3 class="text-center mt-5 mb-5">{{ all.desc }}</h3>
+<center>
+    <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="840"
+        height="390"
+        {% if x.thumb %}
+        poster="{{ all.thumb.url }}"
+        {% endif %}
+        data-setup="{'controls':true,'autoplay':false,'preload':'auto'}">
+
+        <source class = "videodesign" src="{{ all.datafile.url }}" type="video/mp4" />
+    </video>
+</center>
+{% endblock content %}                            
+                
+                

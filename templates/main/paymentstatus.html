@@ -1,0 +1,60 @@
+{% extends 'info\baseindex.html' %}
+{% load static %}
+{% block ind %}
+    <style>
+        .govid{
+            display: inline-block;
+        }
+        .imagedesign{
+            width: 360px;
+            display: inline-block;
+            margin-left: 80px;
+        }
+        .styletoh1{
+            text-align: center;
+            margin-top:60px;
+            margin-bottom:30px;
+        }
+        .styletop{
+            text-align: center;
+            margin-top:100px;
+            margin-bottom:100px;
+        }
+        .stylespan{
+            color:violet;
+        }
+        
+        .trydesign{
+            color:red;
+        }
+
+        .trydesign:hover{
+            color:violet;
+            font-size:20px;
+        }
+        
+    </style>
+
+  <!-- ***** Header Area End ***** -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-content">
+                <div class="aboutkitty">
+                    <h1 class="titleyeah">HelloKitty</h1>
+                    <h5 class="h5design">Since 1997 dedicated for Kids entertainment</h5>
+                </div>                   
+            </div>
+            {% if status %}
+            {% csrf_token %}
+            <h1 class ="styletoh1">Payment Successful</h1>
+            <p class ="styletop">Thanks for contributing for the growth of this site <span class="stylespan">HelloKitty</span></p>
+            {% else %}
+            <h1 class ="styletoh1">Payment Failed</h1>
+            <p class ="styletop">Would you like to <a href = "{% url 'patreon' %}" class ="trydesign">Tryagin</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock ind %}

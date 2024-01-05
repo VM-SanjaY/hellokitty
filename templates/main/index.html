@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>HelloKitty</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'after/assets/images/hellolo.jpg' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'main/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/templatemo-cyborg-gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'main/assets/css/popimprove.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'indexpage' %}" class="logo">
+                        <img src="{% static 'main/assets/images/hello.png' %}" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'indexpage' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'detailspage' %}">Details</a></li>
+                        <li><a href="{% url 'registerpage' %}">Register<img src="{% static 'main/assets/images/hellokitty.gif' %}" alt=""></a></li>
+                        <li><a href="{% url 'loginpage' %}">Log in<img src="{% static 'main/assets/images/hellodance.gif' %}" alt=""></a></li>
+                    </ul>   
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+<div class="main-button">
+    <div class="openBtn">
+        <button onclick="openForm()"><strong>Help us improve</strong></button>
+    </div>
+</div>
+
+
+<!-- ***** pop up screen ***** -->
+
+<div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+      <form class="formContainer" method="POST">
+        {% csrf_token %}
+          <button type="button" class="closedesign" onclick="closeForm()">X</button>
+          <h2 class="h2dis">Help us improve our Site</h2>
+          <div class="disname">
+              <label class="stylename" for="name">
+                  <strong>Name </strong>
+              </label>
+              <input type="text" id="name" placeholder="Max 50 Character..." name="name" required>
+          </div>
+          <div class="likedis">
+              <label for="like">
+                  <strong>Do you like helloKitty</strong>
+              </label>
+              <select class="maindesign" name="like" id="like">
+                  <option class="design" value="yes">Yes</option>
+                  <option class="design" value="no">No</option>
+              </select><br>
+          </div>
+          <div class="howstyle">
+              <label for="how">
+                  <strong>How do you feel about our site</strong>
+              </label>
+              <select class="maindesign" name="how" id="how">
+                  <option class="design" value="aweasome">Its awesome</option>
+                  <option class="design" value="good">Its good</option>
+                  <option class="design" value="ok">Its ok</option>
+                  <option class="design" value="need improvement">can be better</option>
+                  <option class="design" value="bad">Its bad</option>
+              </select><br>
+          </div>
+          <div class="sitestyle">
+            <label>
+                <strong>Is our site kid frindly</strong>
+            </label>
+            <select class="maindesign" name="site" id="site">
+                <option class="design" value="yes">Yes</option>
+                <option class="design" value="no">No</option>
+            </select><br>
+        </div>
+          <div id ="whysite" class="whysitestyle" style="display:none;">
+              <label >
+                  <strong>why :</strong>
+              </label><br>
+              <textarea id="whysite" name="whysite" rows="4" cols="40"></textarea><br>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+          
+      </form>
+    </div>
+  </div>
+<!-- ***** pop up screen ends here ***** -->
+    {% for message in messages %}
+    <h5 class="h5yes">{{message}}</h5>
+    {% endfor %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="header-text">
+                  <h6>Welcome To HelloKitty</h6>
+                  <h4><em>Watch</em> Our Hello Kitty Stories Here</h4>
+                 
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+          <div class="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>Most Rated</em> / Wanna Watch</h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/sto1.jpg' %}" alt=""></a>
+                      <a href="{% url 'v3' %}"><h4>HelloKitty<br><span>picture book</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.6</li>
+                        <li><i class="fa fa-download"></i> 4.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/st02.jpg' %}" alt=""></a>
+                        <a href="{% url 'v3' %}"><h4>Love HelloKitty<br><span>Like and Love</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.4</li>
+                        <li><i class="fa fa-download"></i> 3.6M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'v4' %}"><img src="{% static 'main/assets/images/sto3.jpg' %}" alt=""></a>
+                        <a href="{% url 'v4' %}"><h4>Fun With HelloKitty<br><span>Study sucession</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.0</li>
+                        <li><i class="fa fa-download"></i> 3.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'v4' %}"><img src="{% static 'main/assets/images/sto4.jpg' %}" alt=""></a>
+                        <a href="{% url 'v4' %}"><h4>Fairywing<br><span>Legendary</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.0</li>
+                        <li><i class="fa fa-download"></i> 3.1M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                          <div class="item inner-item">
+                            <a href="{% url 'v4' %}"><img src="{% static 'main/assets/images/sto5.jpg' %}" alt=""></a>
+                            <a href="{% url 'v4' %}"><h4>Candy live<br><span>Island</span></h4></a>
+                            <ul>
+                              <li><i class="fa fa-star"></i> 4.0</li>
+                              <li><i class="fa fa-download"></i> 3.1M</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                          <div class="item">
+                            <a href="{% url 'v4' %}"><img src="{% static 'main/assets/images/sto6.jpg' %}" alt=""></a>
+                            <a href="{% url 'v4' %}"><h4>Sit with Hellokitty<br><span>fun and Games</span></h4></a>
+                            <ul>
+                              <li><i class="fa fa-star"></i> 4.0</li>
+                              <li><i class="fa fa-download"></i> 2.9M</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/sto7.jpg' %}" alt=""></a>
+                        <a href="{% url 'v3' %}"><h4>Dance Kitty<br><span>Will you Dance</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 3.8</li>
+                        <li><i class="fa fa-download"></i> 4.5M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/sto8.jpg' %}" alt=""></a>
+                        <a href="{% url 'v3' %}"><h4>Wish<br><span>35th Anniversary</span></h4></a>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 3.8</li>
+                        <li><i class="fa fa-download"></i> 4.6M</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+
+          <!-- ***** Gaming Library Start ***** -->
+          <div class="gaming-library">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>Most Viewed</em> Library</h4>
+              </div>
+              <div class="item">
+                <ul>
+                  <li><a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/sto8.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'v3' %}"><h4>Wish</h4><span>35th Anniversary</span></a></li>
+                  <li><h4>Date Added</h4><span>24/08/2015</span></li>
+                  <li><h4>Read by </h4><span>4.6 M</span></li>
+                  <li><h4>Currently</h4><span>Not Download</span></li>
+                  <li><div class="main-border-button"><a href="{% url 'loginpage' %}">Donwload</a></div></li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul>
+                  <li><a href="{% url 'v3' %}"><img src="{% static 'main/assets/images/sto7.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'v3' %}"><h4>Dance Kitty</h4><span>Will You Dance</span></a></li>
+                  <li><h4>Date Added</h4><span>22/06/2006</span></li>
+                  <li><h4>Read by</h4><span>4.5 M</span></li>
+                  <li><h4>Currently</h4><span>Not Download</span></li>
+                  <li><div class="main-border-button"><a href="{% url 'loginpage' %}">Donwload</a></div></li>
+                </ul>
+              </div>
+              <div class="item last-item">
+                <ul>
+                  <li><a href="{% url 'v4' %}"><img src="{% static 'main/assets/images/sto1.jpg' %}" alt="" class="templatemo-item"></a></li>
+                  <li><a href="{% url 'v4' %}"><h4>HelloKitty</h4><span>Picture book</span></a></li>
+                  <li><h4>Date Added</h4><span>21/04/1997</span></li>
+                  <li><h4>Read by</h4><span>4.3 M</span></li>
+                  <li><h4>Currently</h4><span>Not Download</span></li>
+                  <li><div class="main-border-button"><a href="{% url 'loginpage' %}">Donwload</a></div></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Gaming Library End ***** -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 1997 <a href="{% url 'indexpage' %}">HelloKitty</a> Pvt.Company. All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'main/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'main/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'main/assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'main/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'main/assets/js/tabs.js' %}"></script>
+  <script src="{% static 'main/assets/js/popup.js' %}"></script>
+  <script src="{% static 'main/assets/js/custom.js' %}"></script>
+  <script>
+    function openForm() {
+      document.getElementById("popupForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("popupForm").style.display = "none";
+    }
+  </script>
+  <script>
+    document.getElementById('site').addEventListener('change', function() {
+        var whysite = document.getElementById('whysite');
+        if (this.value === 'no') {
+            whysite.style.display = 'block';
+        } else {
+            whysite.style.display = 'none';
+        }
+    });
+  </script>
+
+
+  </body>
+
+</html>

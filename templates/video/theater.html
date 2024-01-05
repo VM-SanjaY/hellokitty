@@ -1,0 +1,70 @@
+{% extends 'main\aftermainvideo.html' %}
+{% load static %}
+{% block vid %}
+<style>
+    .allbutton{
+        display: inline-block;
+        margin-top:30px;
+        margin-left:70px;
+
+    }
+
+    .epdesign1{
+      background-color: #27292a;
+      color: white;
+      border-radius: 6px;
+      margin-left:5px;
+    }
+
+    .epdesign1:hover{
+        background-color: #FCD12A;
+        color: white;
+        border: #FCD12A;
+        width: 80px;
+        height: 23px;
+    }
+
+    .butmystyle{
+        margin-top:50px;
+        background-color:#fdd1107a;
+        border-radius:13px;
+        padding-bottom:20px;
+    }
+
+    
+</style>
+
+
+<h3 class="text-center mt-5 mb-5">{{ all.desc }}</h3>
+<center>
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="100%"
+    height="100%"
+    {% if all.thumb %}
+    poster="{{ all.thumb.url }}"
+    {% endif %}
+    data-setup="{'controls':true,'autoplay':false,'preload':'auto'}">
+
+    <source class="videodesign" src="{{ all.datafile.url }}" type="video/mp4" />
+    </video>
+</center>
+
+<div class="butmystyle">
+    <div class="allbutton">
+        <a href="{% url 'theatre1' %}"><button class="epdesign1">episode <span>1</span></button></a>
+        <a href="{% url 'theatre2' %}"><button class="epdesign1">episode <span>2</span></button></a>
+        <a href="{% url 'theatre3' %}"><button class="epdesign1">episode <span>3</span></button></a>
+        <a href="{% url 'theatre4' %}"><button class="epdesign1">episode <span>4</span></button></a>
+        <a href="{% url 'theatre5' %}"><button class="epdesign1">episode <span>5</span></button></a>
+        <a href="{% url 'theatre6' %}"><button class="epdesign1">episode <span>6</span></button></a>
+        <a href="{% url 'theatre7' %}"><button class="epdesign1">episode <span>7</span></button></a>
+        <a href="{% url 'theatre8' %}"><button class="epdesign1">episode <span>8</span></button></a>
+
+    </div>
+</div>
+
+{% endblock vid %}
